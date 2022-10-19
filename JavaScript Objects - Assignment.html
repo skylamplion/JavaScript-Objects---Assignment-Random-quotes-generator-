@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random quotes generator</title>
+    <style>
+        *{
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+        }
+
+        .quotes{
+            background-color: rgb(250, 245, 245);
+            height: 300px;
+            width: 350px;
+            text-align: center;
+            justify-items: center;
+            margin-top: 100px;
+            margin-left: 480px;
+            line-height: 50px;
+            border:2px solid;
+        }
+
+        .heading{
+            color:rgb(41, 109, 155);
+        }
+
+        .button{
+            color:rgb(41, 109, 155);
+            height: 25px;
+            width: 200px;
+            border-color:rgb(78, 203, 237);
+            margin-top: 70px;
+        }
+
+        .inner{
+            margin-top: 30px;
+        }
+
+
+
+    </style>
+</head>
+<body style="background-color:rgb(132, 186, 189);">
+    <div class="quotes">
+    <h3 class="heading">Get Your Daily Quote</h3>
+    <div class="inner">
+    <p id="quotes"></p>
+    <p id="writer"></p>
+</div>
+    <button class="button" id="clickme">Click Me</button>
+    <script>
+        const generateQuote = function() {
+    const quotes = [
+    {
+        quote: "'We choose our destiny in the way we treat others.'",
+        writer: "-Wit"
+     },
+     {
+        quote: "'No snowflake in an avalanche ever feels responsible.'",
+        writer: "-Voltaire"
+     },
+      {
+        quote: "'Fortune favours the brave.'",
+        writer: "-Virgil"
+     },
+     {
+        quote: "'I believe in one thing only, the power of human will.'",
+        writer: "-Joseph Stalin"
+     }]
+    var arrIdx = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quotes").innerHTML = quotes[arrIdx].quote;
+    document.getElementById("writer").innerHTML = quotes[arrIdx].writer;
+}
+window.onload = function() {
+    generateQuote();
+    document.getElementById("clickme").addEventListener('click', generateQuote);
+}
+    </script>
+</div>
+</body>
+</html>
